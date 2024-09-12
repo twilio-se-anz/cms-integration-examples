@@ -1,4 +1,4 @@
-# Twilio CMS Integration Examples
+# Twilio AI Assistants - CMS Integration Examples
 
 Sample integration functions that run on Twilio Serverless that can be used by Flex, Bots and Studio to collect and update data from content management systems. For example adding tools for bots to pull recent orders
 ### Additional reading
