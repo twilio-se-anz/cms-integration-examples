@@ -1,0 +1,44 @@
+{
+  "name": "cms-integration",
+  "description": "Integration of CMS APIs for Shopify et al",
+  "version": "0.0.1",
+  "author": "Christopher Connolly",
+  "private": true,
+  "scripts": {
+    "test": "tsc --noEmit",
+    "start": "twilio-run --functions-folder dist/functions --assets-folder dist/assets",
+    "deploy": "twilio-run deploy --functions-folder dist/functions --assets-folder dist/assets",
+    "build": "tsc && npm run build:copy-assets",
+    "build:copy-assets": "copyfiles src/assets/* src/assets/**/* --up 2 --exclude **/*.ts dist/assets/",
+    "prestart": "npm run build",
+    "predeploy": "npm run build"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.14.0",
+    "@huggingface/inference": "^2.7.0",
+    "@twilio-labs/serverless-runtime-types": "^1.1",
+    "@twilio/runtime-handler": "1.3.0",
+    "@urql/core": "^4.2.0",
+    "axios": "^1.6.0",
+    "gql-query-builder": "^3.8.0",
+    "graphql": "^16.8.1",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.2.5",
+    "nodejento": "github:Genaker/nodejento",
+    "openai": "^4.12.1",
+    "sequelize": "^6.6.5",
+    "shopify-api-node": "^3.12.7",
+    "shopify-buy": "^2.21.1",
+    "twilio": "^4.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.6",
+    "copyfiles": "^2.2.0",
+    "twilio-run": "^3.5.3",
+    "typescript": "^5.2.2"
+  },
+  "resolutions": {
+    "wrap-ansi": "6.1.0"
+  }
+}
